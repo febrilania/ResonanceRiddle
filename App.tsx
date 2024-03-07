@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from "expo-linear-gradient";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
+import Container from "./Container";
+import { config } from "@gluestack-ui/config";
+import Avatar from "./features/profile/components/AvatarPages";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <GluestackUIProvider config={config}>
+        <LinearGradient
+          colors={["#5ecdb8", "#569cdf", "#560be5"]}
+          className="h-full"
+        >
+          <Container />
+        </LinearGradient>
+      </GluestackUIProvider>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
